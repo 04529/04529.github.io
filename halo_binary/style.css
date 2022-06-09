@@ -49,13 +49,12 @@ body{
 .gameHeader{
 
     font-family: 'haloregular'; 
-    font-size: 40wv;
+    font-size: 10vw;
     background-color: white;
+    font-weight: bold;
     color: black;
-    font-size: 10vw; /* Responsive font size */
-     font-weight: bold;
     margin: 0 auto; /* Center the text container */
-    padding: 0px;
+    padding: 10px;
     width: 50%;
     text-align: center; /* Center text */
      position: absolute; /* Position text */
@@ -66,5 +65,19 @@ body{
 
 }
 
+.gameHeader2 { 
+    font-family: 'haloregular'; 
+    font-size: 10vw;
+    color: white; 
+    filter: drop-shadow(0 0 0.75rem rgb(0, 0, 0));
+    margin: 0 auto; /* Center the text container */
+    padding: 0px;
+    width: 50%;
+    text-align: center; /* Center text */
+     position: absolute; /* Position text */
+    top: 75%; /* Position text in the middle */
+    left: 50%; /* Position text in the middle */
+    transform: translate(-50%, -50%); /* Position text in the middle */
 
+}
   
