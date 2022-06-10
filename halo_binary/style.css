@@ -22,11 +22,24 @@
 
 body{
     overflow: hidden;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    font-size: 18px;
+    color: black; 
+    
+}
+
+.landingPage {
     background-image: url("assets/pxArt.png");
     background-size: cover;
     background-repeat: no-repeat;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0px; 
+    left: 0px; 
+    overflow: hidden;
 }
-
 
 
 .centered {
@@ -91,7 +104,7 @@ body{
         font-size: 40px;
         color: #fff;
         text-transform: uppercase;
-        animation: flip 5s;
+        animation: flip 5s infinite;
         animation-delay: calc(.2s * var(--i))
       }
       @keyframes flip {
@@ -210,3 +223,9 @@ button:hover span::before, button:hover span::after{
 .btn-1:hover span::before, .btn-1:hover span::after{
   transition-delay: 0.2s;
 }
+
+a{
+    color: white; 
+    text-decoration: none; 
+}
+
