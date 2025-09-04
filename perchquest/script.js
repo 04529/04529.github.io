@@ -3,8 +3,8 @@ const content = document.getElementById("content");
 const nuts = document.getElementById("nuts");
 const cat = document.getElementById("cat");
 
-let shinyCount = 10;
-let nutsCount = 10;
+let shinyCount = 100;
+let nutsCount = 100;
 let shinyCountChange = 0;
 let nutsCountChange = 0;
 let day = 0;
@@ -54,7 +54,7 @@ function gameplay(name, cost, food, income) {
     content.innerHTML = `<h1>GAME OVER</h1> <p>You have run out of shinies or nuts. Better luck next time!</p> <button onclick="startGame()">Restart Game</button>`;
     shiny.innerHTML = `<h1>${shinyCount}</h1><h3>Shinies</h3>`;
     nuts.innerHTML = `<h1> ${nutsCount}</h1><h3>Nuts</h3>`;
-    cat.innerHTML = `<h1>${income * day}</h1><p>total income</p>`;
+    cat.innerHTML = `<h1>${income * day}</h1><h3>total income</h3>`;
 
     if (day > 10) {
       content.innerHTML =
@@ -64,7 +64,7 @@ function gameplay(name, cost, food, income) {
         "<p>You were found by Raccoon Real Estate Agent, and you were moved into public perching in the zoo. You live with 19 other crows, and you scavenge food from the visitors. You live a long life, but you always wonder what could have been if you had found a better perch. The end.</p>";
     }
   } else {
-    shinyCount = (shinyCount + income) - cost;
+    shinyCount = shinyCount + income - cost;
     nutsCount = nutsCount + food;
     shiny.innerHTML = `<h1>${shinyCount}</h1><h3>Shinies</h3>`;
     nuts.innerHTML = `<h1> ${nutsCount}</h1><h3>Nuts</h3>`;
@@ -72,7 +72,14 @@ function gameplay(name, cost, food, income) {
     let event = getEvent();
     shinyCount = shinyCount + event.shinyChange;
     nutsCount = nutsCount + event.nutsChange;
-    content.innerHTML = `<p><h2>${event.name}</h2> ${event.description}</p> <ul><li>Shinies: ${event.shinyChange}</li><li>Nuts: ${event.nutsChange}</li></ul>
-    </p> <button onclick="gameplay('${name}',${cost},${food},${income})">Next Day</button>`;
+    content.innerHTML = `<p><h1>Day ${day}</h1><h2>${event.name}</h2> ${
+      event.description
+    }</p> <ul><li>Shinies: ${event.shinyChange}</li><li>Nuts: ${
+      event.nutsChange
+    }</li></ul>
+    <p>You are currently living at the <b>${name}</b>. It costs you <b>${cost}</b> shinies per day, and you find <b>${food}</b> nuts per day. You make <b>${income}</b> shinies per day from scavenging. So far, you've made <b>${
+      income * day
+    }</b> shinies from scavenging over ${day} days.</p>
+  <button onclick="gameplay('${name}',${cost},${food},${income})">Next Day</button>`;
   }
 }
