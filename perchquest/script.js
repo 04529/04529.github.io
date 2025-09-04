@@ -3,8 +3,8 @@ const content = document.getElementById("content");
 const nuts = document.getElementById("nuts");
 const cat = document.getElementById("cat");
 
-let shinyCount = 100;
-let nutsCount = 100;
+let shinyCount = 50;
+let nutsCount = 50;
 let shinyCountChange = 0;
 let nutsCountChange = 0;
 let day = 0;
