@@ -50,15 +50,15 @@ function begin() {
 
 function gameplay(name, cost, food, income) {
   day = day + 1;
-  if (shinyCount < 0 || nutsCount < 0) {
+  if (shinyCount < 0 || nutsCount < 0 || day > 30) {
     content.innerHTML = `<h1>GAME OVER</h1> <p>You have run out of shinies or nuts. Better luck next time!</p> <button onclick="startGame()">Restart Game</button>`;
     shiny.innerHTML = `<h1>${shinyCount}</h1><h3>Shinies</h3>`;
     nuts.innerHTML = `<h1> ${nutsCount}</h1><h3>Nuts</h3>`;
     cat.innerHTML = `<h1>${income * day}</h1><h3>total income</h3>`;
 
-    if (day > 10) {
+    if (day > 20) {
       content.innerHTML =
-        "<p>You were found by some kind humans and sent to live in an Animal Sanctuary to live the rest of your days being an ambassador for Millennial Humans. Your story became a viral sensation, and many humans empathized with your flight, calling for better housing availability. Raven Landlord Corporation's stocks plummeted, and they were forced to change their business model to a more ethical one. You lived the rest of your days happily, knowing you made a difference in the world. The end.</p>";
+        "<p>Your story became a viral sensation, and many humans empathized with your flight, calling for better housing availability. Raven Landlord Corporation's stocks plummeted, and they were forced to change their business model to a more ethical one. You lived the rest of your days happily, knowing you made a difference in the world. The end.</p>";
     } else {
       content.innerHTML =
         "<p>You were found by Raccoon Real Estate Agent, and you were moved into public perching in the zoo. You live with 19 other crows, and you scavenge food from the visitors. You live a long life, but you always wonder what could have been if you had found a better perch. The end.</p>";
