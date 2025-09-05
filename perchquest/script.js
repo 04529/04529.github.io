@@ -56,9 +56,9 @@ function gameplay(name, cost, food, income) {
     nuts.innerHTML = `<h1> ${nutsCount}</h1><h3>Nuts</h3>`;
     cat.innerHTML = `<h1>${income * day}</h1><h3>total income</h3>`;
 
-    if (day > 20) {
-      content.innerHTML =
-        "<p>Your story became a viral sensation, and many humans empathized with your flight, calling for better housing availability. Raven Landlord Corporation's stocks plummeted, and they were forced to change their business model to a more ethical one. You lived the rest of your days happily, knowing you made a difference in the world. The end.</p>";
+    if (day > 30) {
+      content.innerHTML = `<h1>${day}</h1>
+        <p>Your story became a viral sensation, and many humans empathized with your flight, calling for better housing availability. Raven Landlord Corporation's stocks plummeted, and they were forced to change their business model to a more ethical one. You lived the rest of your days happily, knowing you made a difference in the world. The end.</p>`;
     } else {
       content.innerHTML =
         "<p>You were found by Raccoon Real Estate Agent, and you were moved into public perching in the zoo. You live with 19 other crows, and you scavenge food from the visitors. You live a long life, but you always wonder what could have been if you had found a better perch. The end.</p>";
@@ -72,7 +72,7 @@ function gameplay(name, cost, food, income) {
     let event = getEvent();
     shinyCount = shinyCount + event.shinyChange;
     nutsCount = nutsCount + event.nutsChange;
-    content.innerHTML = `<p><h1>Day ${day}</h1><h2>${event.name}</h2> ${
+    content.innerHTML = `<p><h1>Day ${day}</h1><h2>${event.name}</h2> <p>${
       event.description
     }</p> <ul><li>Shinies: ${event.shinyChange}</li><li>Nuts: ${
       event.nutsChange
