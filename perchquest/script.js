@@ -119,13 +119,13 @@ function tradeNutsForShinies(name, cost, food, income) {
     shiny.innerHTML = `<h1>${shinyCount}</h1><h3>Shinies</h3>`;
     nuts.innerHTML = `<h1> ${nutsCount}</h1><h3>Nuts</h3>`;
     day = day + 1;
-    cats.innerHTML = `<h1>${income}</h1> <h3>Income</h3>`;
+    cat.innerHTML = `<h1>${income}</h1> <h3>Income</h3>`;
     content.innerHTML = `<h1>Day ${day}</h1><p>You go see some woodland creatures to see what you can trade for shinies. You have more than enough to share, but what you really want are more shinies. Vintage shinies. Smart shinies. All shinies. You can only really carry 3 nuts per day. You don't gain any new nuts to eat. The squirrels thank you.</p>
 <button onclick="gameplay('${name}',${cost},${food}, ${income})">Next Day</button>`;
   } else {
     shiny.innerHTML = `<h1>${shinyCount}</h1><h3>Shinies</h3>`;
     nuts.innerHTML = `<h1> ${nutsCount}</h1><h3>Nuts</h3>`;
-    cats.innerHTML = `<h1>${income}</h1> <h3>Income</h3>`;
+    cat.innerHTML = `<h1>${income}</h1> <h3>Income</h3>`;
 
     content.innerHTML = `<h1>Day ${day}</h1><p>You don't have any money to trade You don't leave the perch.</p>
 <button onclick="gameplay('${name}',${cost},${food}, ${income})">Next Day</button>`;
