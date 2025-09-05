@@ -3,8 +3,8 @@ const content = document.getElementById("content");
 const nuts = document.getElementById("nuts");
 const cat = document.getElementById("cat");
 
-let shinyCount = 50;
-let nutsCount = 50;
+let shinyCount = 20;
+let nutsCount = 20;
 let shinyCountChange = 0;
 let nutsCountChange = 0;
 let day = 0;
@@ -64,22 +64,51 @@ function gameplay(name, cost, food, income) {
         "<p>You were found by Raccoon Real Estate Agent, and you were moved into public perching in the zoo. You live with 19 other crows, and you scavenge food from the visitors. You live a long life, but you always wonder what could have been if you had found a better perch. The end.</p>";
     }
   } else {
-    shinyCount = shinyCount + income - cost;
-    nutsCount = nutsCount + food;
-    shiny.innerHTML = `<h1>${shinyCount}</h1><h3>Shinies</h3>`;
-    nuts.innerHTML = `<h1> ${nutsCount}</h1><h3>Nuts</h3>`;
-    cat.innerHTML = `<h1>${income}</h1> <h3>Income</h3>`;
-    let event = getEvent();
-    shinyCount = shinyCount + event.shinyChange;
-    nutsCount = nutsCount + event.nutsChange;
-    content.innerHTML = `<p><h1>Day ${day}</h1><h2>${event.name}</h2> <p>${
-      event.description
-    }</p> <ul><li>Shinies: ${event.shinyChange}</li><li>Nuts: ${
-      event.nutsChange
-    }</li></ul>
+    if (day % 2 == 0) {
+      shinyCount = shinyCount + income - cost;
+      nutsCount = nutsCount + food;
+      shiny.innerHTML = `<h1>${shinyCount}</h1><h3>Shinies</h3>`;
+      nuts.innerHTML = `<h1> ${nutsCount}</h1><h3>Nuts</h3>`;
+      cat.innerHTML = `<h1>${income}</h1> <h3>Income</h3>`;
+      shinyCount = shinyCount;
+      nutsCount = nutsCount;
+      content.innerHTML = `<p><h1>Day ${day}</h1>
     <p>You are currently living at the <b>${name}</b>. It costs you <b>${cost}</b> shinies per day, and you find <b>${food}</b> nuts per day. You make <b>${income}</b> shinies per day from scavenging. So far, you've made <b>${
-      income * day
-    }</b> shinies from scavenging over ${day} days.</p>
-  <button onclick="gameplay('${name}',${cost},${food},${income})">Next Day</button>`;
+        income * day
+      }</b> shinies from scavenging over ${day} days. It's a great life, so far - but you're a crow. Maybe, just maybe you want some excitement</p>
+  <button onclick="gameplay('${name}',${cost},${food},${income})">Next Day</button> &nbsp; &nbsp; <button onclick="getANewPerch()">Find a new perch</button>`;
+    } else {
+      shinyCount = shinyCount + income - cost;
+      nutsCount = nutsCount + food;
+      shiny.innerHTML = `<h1>${shinyCount}</h1><h3>Shinies</h3>`;
+      nuts.innerHTML = `<h1> ${nutsCount}</h1><h3>Nuts</h3>`;
+      cat.innerHTML = `<h1>${income}</h1> <h3>Income</h3>`;
+      let event = getEvent();
+      shinyCount = shinyCount + event.shinyChange;
+      nutsCount = nutsCount + event.nutsChange;
+      content.innerHTML = `<p><h1>Day ${day}</h1><h2>${event.name}</h2> <p>${
+        event.description
+      }</p> <ul><li>Shinies: ${event.shinyChange}</li><li>Nuts: ${
+        event.nutsChange
+      }</li></ul>
+
+    <p>You are currently living at the <b>${name}</b>. It costs you <b>${cost}</b> shinies per day, and you find <b>${food}</b> nuts per day. You make <b>${income}</b> shinies per day from scavenging. So far, you've made <b>${
+        income * day
+      }</b> shinies from scavenging over ${day} days.</p>
+  <button onclick="gameplay('${name}',${cost},${food},${income})">Next Day</button> &nbsp; &nbsp; <button onclick="getANewPerch()">Find a new perch</button>`;
+    }
   }
+}
+
+function getANewPerch() {
+  let diceRoll = Math.floor(Math.random() * 6);
+  let home = locations[diceRoll];
+  day = day + 1;
+  content.innerHTML = `<h1>Day ${day}</h1><p>You're moving! This will cost you -1 shiny and -1 nuts to move your stuff over. Every time you click "Find Another Spot", you lose 1 shinies! You can only move once a day, so make it count!</p> <ul><li>
+  ${home.name}</li><li>${home.description}</li><li>Cost: ${
+    home.cost
+  } shinies</li><li>Food Availability: ${home.nuts} nuts</ul> </p> 
+<button onclick="gameplay('${home.name}',${home.cost + 1},${home.nuts}, ${
+    home.income
+  })">Move in?</button>`;
 }
