@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALICE WAKE</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+
+</head>
+<body class="index">
+    <div class="hero">
+        <img src="./assets/indexHero.png"/>
+    </div>
+
+    <div class="pressStart">
+        <h1>PRESS <button id="enter">ENTER</button> TO CONTINUE</h1>
+OR CLICK ENTER    </div>
+    <script>
+        document.getElementById("enter").addEventListener("click", function() {
+            window.location.href = "./chapterSelect.html";
+        });
+
+        document.addEventListener("keydown", function(event) {
+            if (event.key === "Enter") {
+                window.location.href = "./chapterSelect.html";
+            }
+        });
+    </script>
+</body>
+</html>

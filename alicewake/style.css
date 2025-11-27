@@ -1,0 +1,134 @@
+:root{
+    --main-bg-color: #141414;
+    --secondary-bg-color: #0f1516;
+    --text-color: #f0f0f0;
+    --accent-color: #ff6f61;
+    cursor: text;
+}
+
+
+body{
+    padding: 0px; 
+    margin: 0px; 
+}
+
+.chapterSongs{
+    background-color: #141414;
+}
+
+
+.chapters{
+    background-color: #141414;
+}
+
+.index{
+    background-color: #0f1516;
+
+    place-items: center;
+}
+
+.chapterSelect{
+    background-color: #141414;
+    position: relative;
+}
+
+.index > div {
+    background-color: var(--secondary-bg-color);
+}
+
+.hero > img {
+    width: 100%;
+}
+
+.pressStart{
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    height: 36px;
+    color: #c3b2a5;
+}
+
+.pressStart h1{
+    color:#c3b2a5;
+    font-size: 36px;
+    line-height: 36px;
+    
+}
+
+.pressStart button{
+    background-color: #c3b2a5;
+    color: var(--main-bg-color);
+    border-radius: 4px;
+    border: 0px solid;
+        font-family: "Roboto", sans-serif;
+        font-size: 24px; 
+        margin: 5px; 
+ 
+}
+
+.bottomHero{
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    z-index: 1;
+}
+
+.documentaryPages{
+    position: fixed; 
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    color: white; 
+    font-family: "Roboto Mono", monospace;
+    font-weight: 100;
+    font-size: 30px;
+    padding: 50px;
+    z-index: 1; 
+}
+
+.documentaryPages > h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 48px;
+}
+
+.documentaryPages > ul {
+    list-style-type: none;
+    line-height: 48px;
+    
+}
+
+.documentaryPages > ul > li{
+
+    letter-spacing: 2.5px;
+
+}
+
+.documentaryPages > ul > li:hover {
+    color: var(--main-bg-color);
+    background-color: white;
+      transform: rotateX(180deg);
+}
+
+.pages{
+    padding: 30px; 
+    line-height: 30px;
+    font-family: "Roboto Mono", monospace;
+    font-weight: 100;
+    font-size: 24px;
+    color: white;
+    background-color: var(--secondary-bg-color);
+    border-radius:  12px 12px 0px 0px; 
+    border-left: rgba(255, 255, 255, 0.372) 4px solid;
+    border-right: rgba(255, 255, 255, 0.372) 4px solid;
+    border-top: rgba(255, 255, 255, 0.372) 4px solid;
+    bottom: 0px;
+    position: fixed; 
+    bottom: 0%; 
+    left: 50%; 
+    transform: translate(-50%, 0%);
+    z-index: 5;
+    width: 75%;
+    min-height: 75%;
+    transition: all 0.3s ease-in-out;
+    display: none; 
+}

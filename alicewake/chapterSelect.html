@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALICE WAKE</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+
+</head>
+<body class="chapterSelect">
+    <img src="./assets/AliceChapters.png" class="bottomHero"/>
+
+    <div class="documentaryPages">
+        <ul>
+            <li id="one">Alice in the Dark Place</li>
+            <li id="two">Room 777</li>
+            <li id="three">Alan, from the Shadows</li>
+            <li id="four">Scratch and its Wake</li>
+            <li id="five">Mapping The Spiral</li>
+            <li id="six">Saga Anderson</li>
+            <li id="seven">Bullet of Light</li>
+            <li id="eight">Reunion</li>
+        </ul>
+    </div>
+
+    <div class="pages">
+        LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISICING ELIT. </div>
+
+    <script>   
+        const listItems = document.querySelectorAll('.documentaryPages ul li');
+        const divPages = document.getElementsByClassName('pages')[0]
+
+        listItems.forEach(item => {
+            item.addEventListener('click', () => {
+              console.log(`You clicked on chapter: ${item.id}`);
+              divPages.style.display = 'block';
+                divPages.innerHTML = `You have selected chapter: ${item.textContent} <button onclick="(() => { divPages.style.display = 'none'; })()">RETURN</button>`;
+            });
+        });
+    </script>
+    
+</body>
+</html>
