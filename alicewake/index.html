@@ -17,7 +17,31 @@
 
     <div class="pressStart">
         <h1>PRESS <button id="enter">ENTER</button> TO CONTINUE</h1>
-OR CLICK ENTER    </div>
+        see <button id="credits">credits</button>
+        </div>
+
+        <div class="credits">
+            <h2>Credits:</h2>
+            <div class="credit-item">
+                <strong>Fox</strong><br>
+                Background photo by Ray Hennessy on <a href="https://unsplash.com" target="_blank">Unsplash</a>
+            </div>
+            <div class="credit-item">
+                <strong>Manuscript</strong><br>
+                Background photo by Tyler Moore on <a href="https://unsplash.com" target="_blank">Unsplash</a>
+            </div>
+            <div class="credit-item">
+                <strong>Opening Screen</strong><br>
+                Photo by Joshua Hanson on <a href="https://unsplash.com" target="_blank">Unsplash</a>
+            </div>
+            <div class="credit-item">
+                <strong>Spiral</strong><br>
+                Photo by Javier Esteban on <a href="https://unsplash.com" target="_blank">Unsplash</a>
+            </div>
+
+            <button id="seeYouAlan">see you on the other side ... alan.</button>
+        </div>
+
     <script>
         document.getElementById("enter").addEventListener("click", function() {
             window.location.href = "./chapterSelect.html";
@@ -27,6 +51,16 @@ OR CLICK ENTER    </div>
             if (event.key === "Enter") {
                 window.location.href = "./chapterSelect.html";
             }
+        });
+
+        document.getElementById("credits").addEventListener("click", function() {
+            const creditsDiv = document.getElementsByClassName("credits")[0];
+            creditsDiv.style.bottom = "0%";
+        });
+
+        document.getElementById("seeYouAlan").addEventListener("click", function() {
+            const creditsDiv = document.getElementsByClassName("credits")[0];
+            creditsDiv.style.bottom = "-100%";
         });
     </script>
 </body>

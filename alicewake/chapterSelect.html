@@ -15,32 +15,20 @@
 
     <div class="documentaryPages">
         <ul>
-            <li id="one">Alice in the Dark Place</li>
-            <li id="two">Room 777</li>
-            <li id="three">Alan, from the Shadows</li>
-            <li id="four">Scratch and its Wake</li>
-            <li id="five">Mapping The Spiral</li>
-            <li id="six">Saga Anderson</li>
-            <li id="seven">Bullet of Light</li>
-            <li id="eight">Reunion</li>
+            <li id="1">Alice in the Dark Place</li>
+            <li id="2">Room 777</li>
+            <li id="3">Alan, from the Shadows</li>
+            <li id="4">Scratch and its Wake</li>
+            <li id="5">Mapping The Spiral</li>
+            <li id="6">Saga Anderson</li>
+            <li id="7">Bullet of Light</li>
+            <li id="8">Reunion</li>
         </ul>
     </div>
 
-    <div class="pages">
-        LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISICING ELIT. </div>
+    <div class="pages"></div>
 
-    <script>   
-        const listItems = document.querySelectorAll('.documentaryPages ul li');
-        const divPages = document.getElementsByClassName('pages')[0]
-
-        listItems.forEach(item => {
-            item.addEventListener('click', () => {
-              console.log(`You clicked on chapter: ${item.id}`);
-              divPages.style.display = 'block';
-                divPages.innerHTML = `You have selected chapter: ${item.textContent} <button onclick="(() => { divPages.style.display = 'none'; })()">RETURN</button>`;
-            });
-        });
-    </script>
+        <script src="./script.js"></script>
     
 </body>
 </html>

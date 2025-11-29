@@ -75,8 +75,8 @@ body{
 .documentaryPages{
     position: fixed; 
     top: 50%;
-    left: 50%; 
-    transform: translate(-50%, -50%);
+    left: 500px; 
+    transform: translate(0%, -50%);
     color: white; 
     font-family: "Roboto Mono", monospace;
     font-weight: 100;
@@ -110,25 +110,71 @@ body{
 }
 
 .pages{
+    position: fixed;
+        bottom: -500%;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        z-index: 5;
+        width: 75%;
     padding: 30px; 
-    line-height: 30px;
+    line-height: 24px;
     font-family: "Roboto Mono", monospace;
     font-weight: 100;
-    font-size: 24px;
+    font-size: 18px;
     color: white;
     background-color: var(--secondary-bg-color);
     border-radius:  12px 12px 0px 0px; 
     border-left: rgba(255, 255, 255, 0.372) 4px solid;
     border-right: rgba(255, 255, 255, 0.372) 4px solid;
     border-top: rgba(255, 255, 255, 0.372) 4px solid;
-    bottom: 0px;
-    position: fixed; 
-    bottom: 0%; 
-    left: 50%; 
-    transform: translate(-50%, 0%);
-    z-index: 5;
-    width: 75%;
-    min-height: 75%;
-    transition: all 0.3s ease-in-out;
-    display: none; 
+    transition-property: bottom;
+        transition-duration: 300ms;
+        transition-timing-function: ease-out;
+    overflow-y: scroll;
+  }
+
+  .returnButton{
+    color: var(--main-bg-color);
+        background-color: white;
+        padding: 4px; 
+        border-radius: 4px; 
+        border: 0px solid;
+        font-family: "Roboto Mono", monospace;
+        font-size: 18px;
+    }
+
+    .returnButton:hover{
+            transform: rotateX(180deg);
+    }
+
+    #credits{
+        font-size: 12px;
+    }
+
+    .credits{
+        position: fixed;
+        bottom: -500px;
+        left: 10px;
+        font-family: "Roboto Mono", monospace;
+        font-size: 14px;
+        color: white;
+    }
+
+    .credits a{
+        color: white;
+        text-decoration: none;
+    }
+
+    .credits a:hover{
+            transform: rotateX(-180deg);    }
+
+.credits > button{
+    background-color: white;
+    padding: 4px; 
+    margin: 4px;
+    border-radius: 4px; 
+    border: 0px solid;
+    font-family: "Roboto Mono", monospace;
+    font-size: 12px;
+    color: var(--main-bg-color);
 }
